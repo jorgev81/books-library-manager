@@ -1,0 +1,21 @@
+.MainLayout {
+
+    .PageContainer {
+        margin: 24px auto 0 auto;
+
+        @media only screen and (max-width: 1920px) {
+            flex-grow: 1;
+        }
+
+        .PageContainerChildren {
+            flex-grow: 1;
+            background-color: #ffffff;
+            padding: 20px;
+            height: 100%;
+
+            >* {
+                padding: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import '../../styles/global.styles.scss';
+
+.CreateBookModal {
+  .modal-container {
+    width: 530px;
+    overflow: auto;
+    background-color: white;
+    box-shadow: $container-box-shadow;
+    border-radius: $primary-border-radius;
+    padding: 30px 40px;
+    margin-top: 25px;
+  }
+
+  .ButtonsContainer {
+    justify-content: space-between;
+  }
+}

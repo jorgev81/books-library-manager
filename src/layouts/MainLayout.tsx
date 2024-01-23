@@ -21,7 +21,7 @@ const MainLayout = (props: PropsWithChildren) => {
                     className='HeaderContainer'
                     item
                     component='header'
-                    xl={10}
+                    xl={9}
                     xs={11}
                     mt={3}
                 >
@@ -36,7 +36,7 @@ const MainLayout = (props: PropsWithChildren) => {
                     className='PageContainer'
                     item
                     component='main'
-                    xl={10}
+                    xl={9}
                     xs={11}
                 >
                     <Box className='PageContainerChildren'>{children}</Box>

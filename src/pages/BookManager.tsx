@@ -10,9 +10,11 @@ import CreateBookModal from "../components/CreateBookModal";
 import Box from "@mui/material/Box";
 import useSWR from "swr";
 
+import { toast } from "react-toastify";
+
 const BookManager = () => {
 
-    const {isLoading, error, data: books, mutate } = useSWR(API_URL, fetchBooks, {});
+    const { isLoading, error, data: books, mutate } = useSWR(API_URL, fetchBooks, {});
 
     const [editMode, setEditMode] = useState(false);
     const [selectedRow, setSelectedRow] = useState<IBook | null>(null);
@@ -48,8 +50,9 @@ const BookManager = () => {
                 mutate();
                 setDeleteAlertOpen(false);
                 setSelectedRow(null);
+                toast.success(`Book deleted successfully: ${selectedRow.title}`);
             } catch (error) {
-                console.error('Error removing book:', error);
+                toast.error(`Error removing book: ${selectedRow.title}`);
             }
         }
     };
@@ -59,8 +62,9 @@ const BookManager = () => {
         try {
             await addBook(newBook);
             mutate();
+            toast.success(`Book added successfully: ${newBook.title}`);
         } catch (error) {
-            console.error('Error adding book:', error);
+            toast.error(`Error adding book: ${newBook.title}`);
         }
     };
 
@@ -68,8 +72,9 @@ const BookManager = () => {
         try {
             await updateBook(book);
             mutate();
+            toast.success(`Book updated successfully: ${book.title}`);
         } catch (error) {
-            console.error('Error updating book:', error);
+            toast.error(`Error updating book: ${book.title}`);
         }
     };
 
@@ -80,6 +85,7 @@ const BookManager = () => {
                 onClick={() => setManageBookModal(true)}>
                 +Add a book
             </Button>
+            
             {books && <BooksDataTable
                 data={books}
                 isLoading={isLoading}

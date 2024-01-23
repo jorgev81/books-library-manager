@@ -1,0 +1,31 @@
+//PALETTE
+$primary: #03aadb;
+$primary-light: #e6f7fb;
+$success: #2aab6c;
+$primary-background: #e5e5e5;
+$default: #a7a4a4;
+$default-light: #777;
+$light-gray: #d9d9d9;
+$danger: #dc3545;
+
+//SHADOWS
+$container-box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14),
+  0px 1px 5px rgba(0, 0, 0, 0.12);
+
+//BORDERS
+$primary-border-radius: 5px;
+$container-border: 1px solid rgba(0, 0, 0, 0.12);
+
+:export {
+  primary: $primary;
+  primaryLight: $primary-light;
+  success: $success;
+  primaryBackground: $primary-background;
+  default: $default;
+  defaultLight: $default-light;
+  lightGray: $light-gray;
+  danger: $danger;
+  containerBoxShadow: $container-box-shadow;
+  primaryBorderRadius: $primary-border-radius;
+  containerBorder: $container-border;
+}

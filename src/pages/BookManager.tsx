@@ -2,18 +2,17 @@
 import { useState } from "react";
 import BooksDataTable from "../components/BooksDataTable/BooksDataTable";
 import Button from "../components/Button";
-import useSWR from "swr";
-import { fetchBooks, addBook } from "../api/api";
+import { fetchBooks, addBook, removeBook, updateBook, API_URL } from "../api/api";
 import { Add } from "@mui/icons-material";
 import { IBook } from "../models/types";
 import ActionConfirmationAlert from "../components/ActionConfirmationAlert";
 import CreateBookModal from "../components/CreateBookModal";
 import Box from "@mui/material/Box";
+import useSWR from "swr";
 
 const BookManager = () => {
 
-    const { data: books, error: fetchError, isLoading: isLoadingBooks } = useSWR('/books', fetchBooks);
-    const { data: newBook, error: addError, isLoading: isAddingBook } = useSWR('/books', addBook);
+    const {isLoading, error, data: books, mutate } = useSWR(API_URL, fetchBooks, {});
 
     const [editMode, setEditMode] = useState(false);
     const [selectedRow, setSelectedRow] = useState<IBook | null>(null);
@@ -31,41 +30,66 @@ const BookManager = () => {
         }
     };
 
-    const handleDeleteBook = () => {
-        if (!selectedRow) {
-            throw new Error('Selected project is null');
-        }
-
-        setDeleteAlertOpen(false);
-        setSelectedRow(null);
-    };
-
     const handleCreateUpdateModalSubmit = (data: IBook) => {
         setManageBookModal(false);
         if (editMode) {
             setSelectedRow(null);
-            console.log('update', data);
+            handleUpdateBook(data);
         } else {
-            console.log('create', data);
+            handleAddBook(data);
+        }
+    };
+
+
+    const handleDeleteBook = async () => {
+        if (selectedRow?.id) {
+            try {
+                await removeBook(selectedRow.id);
+                mutate();
+                setDeleteAlertOpen(false);
+                setSelectedRow(null);
+            } catch (error) {
+                console.error('Error removing book:', error);
+            }
+        }
+    };
+
+
+    const handleAddBook = async (newBook: IBook) => {
+        try {
+            await addBook(newBook);
+            mutate();
+        } catch (error) {
+            console.error('Error adding book:', error);
+        }
+    };
+
+    const handleUpdateBook = async (book: IBook) => {
+        try {
+            await updateBook(book);
+            mutate();
+        } catch (error) {
+            console.error('Error updating book:', error);
         }
     };
 
     return (
         <Box className="BookManagerContainer">
-            <Button 
-            startIcon={<Add />} 
-            onClick={() => setManageBookModal(true)}>
+            <Button
+                startIcon={<Add />}
+                onClick={() => setManageBookModal(true)}>
                 +Add a book
-                </Button>
-            <BooksDataTable
-                data={[]}
-                isLoading={false}
+            </Button>
+            {books && <BooksDataTable
+                data={books}
+                isLoading={isLoading}
                 onSelectedRowChange={handleOnSelectAction}
-            />
+            />}
+
             {openManageBookModal && <CreateBookModal
                 editMode={editMode}
                 initialData={editMode ? selectedRow ?? undefined : undefined}
-                loading={isAddingBook}
+                loading={isLoading}
                 open={openManageBookModal}
                 onClose={() => setManageBookModal(false)}
                 onCreateFormSubmit={handleCreateUpdateModalSubmit}

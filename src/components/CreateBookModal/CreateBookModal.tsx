@@ -77,7 +77,7 @@ const CreateBookModal = (props: ICreateBookModal) => {
               onSubmit={(values) => onSubmit(values)}
             >
               <Form>
-                <Grid container>
+                <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <Field
                       component={TextField}
@@ -122,7 +122,14 @@ const CreateBookModal = (props: ICreateBookModal) => {
                       type="text"
                     />
                   </Grid>
-                  <Stack direction='row'>
+                  <Stack
+                    direction='row'
+                    mt={5}
+                    pl={2}
+                    flex={1}
+                    spacing={3}
+                    justifyContent='space-between'
+                  >
                     <Button
                       disabled={props.loading}
                       color='error'

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { DatatableActionOptionType, IBook } from '../../models/types';
 import DatatableActionButton from '../DatatableActionButton';
+import './BooksDataTable.scss';
 
 interface IBooksDataTable {
     data: IBook[];
@@ -51,7 +52,7 @@ const BooksDataTable = (props: IBooksDataTable) => {
     ];
 
     return (
-        <div style={{ height: 400, width: '100%' }}>
+        <div className='DataTableContainer'>
             <DataGrid
                 rows={data}
                 columns={columns}

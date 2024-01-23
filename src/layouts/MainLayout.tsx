@@ -22,7 +22,7 @@ const MainLayout = (props: PropsWithChildren) => {
                     item
                     component='header'
                     xl={10}
-                    xs={10}
+                    xs={11}
                     mt={3}
                 >
                     <Typography
@@ -37,9 +37,9 @@ const MainLayout = (props: PropsWithChildren) => {
                     item
                     component='main'
                     xl={10}
-                    xs={10}
+                    xs={11}
                 >
-                    {children}
+                    <Box className='PageContainerChildren'>{children}</Box>
                 </Grid>
             </Grid>
         </Box>

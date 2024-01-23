@@ -52,7 +52,11 @@ const BookManager = () => {
 
     return (
         <Box className="BookManagerContainer">
-            <Button startIcon={<Add />} onClick={() => setManageBookModal(true)}>+Add a book</Button>
+            <Button 
+            startIcon={<Add />} 
+            onClick={() => setManageBookModal(true)}>
+                +Add a book
+                </Button>
             <BooksDataTable
                 data={[]}
                 isLoading={false}

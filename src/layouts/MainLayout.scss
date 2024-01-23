@@ -10,12 +10,7 @@
         .PageContainerChildren {
             flex-grow: 1;
             background-color: #ffffff;
-            padding: 20px;
             height: 100%;
-
-            >* {
-                padding: 10px;
-            }
         }
     }
 }

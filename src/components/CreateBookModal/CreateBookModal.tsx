@@ -11,7 +11,7 @@ import { TextField } from 'formik-mui';
 import * as Yup from 'yup';
 import { IBook } from '../../models/types';
 import { Stack } from '@mui/material';
-import { v4 as uuidv4 } from 'uuid';
+import { generateUniqueId } from '../../utils/generateUniqueId';
 
 const CreateBookSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
@@ -34,7 +34,7 @@ const CreateBookModal = (props: ICreateBookModal) => {
 
   const onSubmit = (values: { title: string, author: string, genre: string, description: string }) => {
 
-    const newId = uuidv4();
+    const newId = generateUniqueId();
 
     props.onCreateFormSubmit?.({
       ...props.initialData,

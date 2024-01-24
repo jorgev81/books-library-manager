@@ -23,10 +23,10 @@ const MainLayout = (props: PropsWithChildren) => {
                     component='header'
                     xl={9}
                     xs={11}
-                    mt={3}
+                    mt={4}
                 >
                     <Typography
-                        variant='h5'
+                        variant='h4'
                         align='center'
                         color='primary'>
                         Book Manager

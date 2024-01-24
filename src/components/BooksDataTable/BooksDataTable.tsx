@@ -36,10 +36,10 @@ const BooksDataTable = (props: IBooksDataTable) => {
         {
             field: 'title',
             headerName: 'Title',
-            flex: 2,
+            flex: 3,
         },
-        { field: 'author', headerName: 'Author', flex: 2 },
-        { field: 'genre', headerName: 'Genre', flex: 1 },
+        { field: 'author', headerName: 'Author', flex: 3 },
+        { field: 'genre', headerName: 'Genre', flex: 2 },
         { field: 'description', headerName: 'Description', flex: 4 },
         {
             field: 'actions',
@@ -56,13 +56,16 @@ const BooksDataTable = (props: IBooksDataTable) => {
             <DataGrid
                 rows={data}
                 columns={columns}
+                loading={isLoading}
+                autoHeight
                 getRowId={(row: IBook) => row.id}
                 initialState={{
                     pagination: {
-                        paginationModel: { page: 0, pageSize: 5 },
+                        paginationModel: { page: 0, pageSize: 10 },
                     },
                 }}
                 pageSizeOptions={[5, 10]}
+
             />
         </div>
     );

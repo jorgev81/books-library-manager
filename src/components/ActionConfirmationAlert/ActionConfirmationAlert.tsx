@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import './ActionConfirmationAlert.scss';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
@@ -18,7 +17,7 @@ interface ActionConfirmationAlertProps {
   onCancel?: () => void;
 }
 
-const ActionConfirmationAlert: FC<ActionConfirmationAlertProps> = (props) => (
+const ActionConfirmationAlert= (props: ActionConfirmationAlertProps) => (
   <Dialog
     aria-describedby="alert-dialog-description"
     aria-labelledby="alert-dialog-title"

@@ -17,7 +17,7 @@ const CreateBookSchema = Yup.object().shape({
   title: Yup.string().required('Required'),
   author: Yup.string().required('Required'),
   genre: Yup.string().required('Required'),
-  description: Yup.string(),
+  description: Yup.string().max(500, 'Description must be less than 500 character'),
 });
 
 
@@ -77,7 +77,9 @@ const CreateBookModal = (props: ICreateBookModal) => {
                 description: props.initialData?.description ?? ''
               }}
               validationSchema={CreateBookSchema}
-              onSubmit={(values) => onSubmit(values)}
+              onSubmit={(values: {
+                title: string; author: string; genre: string; description: string;
+              }) => onSubmit(values)}
             >
               <Form>
                 <Grid container spacing={2}>
@@ -120,9 +122,11 @@ const CreateBookModal = (props: ICreateBookModal) => {
                       fullWidth={true}
                       id="bookDescription"
                       label="Description"
-                      margin='dense'
                       name="description"
                       type="text"
+                      multiline
+                      rows={4}
+                      variant="standard"
                     />
                   </Grid>
                   <Stack

@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 
 export const StyledButton = styled(Button)<ButtonProps>(({ theme }) => {
   return {
-    color: '#fff',
     minWidth: 150,
     textTransform: 'initial',
     fontWeight: 400,

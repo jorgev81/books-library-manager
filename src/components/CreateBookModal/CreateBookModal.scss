@@ -2,7 +2,8 @@
 
 .CreateBookModal {
   .modal-container {
-    width: 530px;
+    min-width: 400px;
+    max-width: 530px;
     overflow: auto;
     background-color: white;
     box-shadow: $container-box-shadow;

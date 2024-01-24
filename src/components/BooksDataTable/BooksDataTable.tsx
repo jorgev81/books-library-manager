@@ -36,11 +36,11 @@ const BooksDataTable = (props: IBooksDataTable) => {
         {
             field: 'title',
             headerName: 'Title',
-            flex: 3,
+            flex: 2,
         },
-        { field: 'author', headerName: 'Author', flex: 1 },
-        { field: 'genre', headerName: 'Genre', flex: 2 },
-        { field: 'description', headerName: 'Description', flex: 2 },
+        { field: 'author', headerName: 'Author', flex: 2 },
+        { field: 'genre', headerName: 'Genre', flex: 1 },
+        { field: 'description', headerName: 'Description', flex: 4 },
         {
             field: 'actions',
             align: 'right',

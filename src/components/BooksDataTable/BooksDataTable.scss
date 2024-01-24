@@ -1,26 +1,28 @@
 @import '../../styles/vars.module.scss';
 
 .DataTableContainer {
-    margin-top: 24px;
-    height: 400px;
+  margin-top: 24px;
+  height: 400px;
 
-  .DatatableBody {
-    .MuiDataGrid-detailPanel {
-      padding: 15px;
+
+  .MuiDataGrid-root {
+
+    .MuiDataGrid-cell,
+    .MuiDataGrid-columnHeader {
+      &:focus-within {
+        outline: none !important;
+      }
     }
 
-    .MuiDataGrid-root {
-      .MuiDataGrid-cell,
-      .MuiDataGrid-columnHeader {
-        &:focus-within {
-          outline: none !important;
-        }
-      }
+    & .MuiDataGrid-cell {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      padding: 20px;
+    }
 
-      & .MuiDataGrid-cell {
-        white-space: normal;
-        overflow-wrap: anywhere;
-      }
+    & .MuiDataGrid-columnHeader {
+      padding: 20px;
     }
   }
+
 }

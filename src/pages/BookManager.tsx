@@ -83,9 +83,9 @@ const BookManager = () => {
             <Button
                 startIcon={<Add />}
                 onClick={() => setManageBookModal(true)}>
-                +Add a book
+                Add a book
             </Button>
-            
+
             {books && <BooksDataTable
                 data={books}
                 isLoading={isLoading}
@@ -102,7 +102,7 @@ const BookManager = () => {
             />}
 
             {deleteAlertOpen && <ActionConfirmationAlert
-                content={`Are you sure you want to delete book ${selectedRow?.title}`}
+                content={`Are you sure you want to delete the book: ${selectedRow?.title}`}
                 open={deleteAlertOpen}
                 onCancel={() => setDeleteAlertOpen(false)}
                 onConfirm={handleDeleteBook}

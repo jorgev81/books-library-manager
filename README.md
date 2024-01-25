@@ -9,16 +9,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Follow these steps to set up and run the application:
 
 - Create a Root Folder:
-mkdir your-app-name
-cd your-app-name
+```mkdir your-app-name
+   cd your-app-name
+```
 
 - Inside root folder, clone the Frontend Repository.
 
 - Inside root folder, create the Server folder and copy the Node.js mock server.
 
 - Install Dependencies and Start the Application:
-cd FRONTEND_FOLDER
-npm run start-app
+```cd FRONTEND_FOLDER
+   npm run start-app
+```
 
 ## Requirements
 

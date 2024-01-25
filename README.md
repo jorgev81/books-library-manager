@@ -18,7 +18,8 @@ Follow these steps to set up and run the application:
 - Inside root folder, create the Server folder and copy the Node.js mock server.
 
 - Install Dependencies and Start the Application:
-```cd FRONTEND_FOLDER
+```
+   cd frontend_folder
    npm run start-app
 ```
 
@@ -27,9 +28,9 @@ Follow these steps to set up and run the application:
 ### Widget Functionality:
 - Allows users to add a new book.
 - Display the books in a table. 
-- Allow users to delete a book. 
-- Allow users to update a book.
-- Allows users to use mui datatable filters and pagination features.
+- Allows users to delete a book. 
+- Allows users to update a book.
+- Allows users to use Mui Datatable filters and pagination features.
 
 ### Dependencies
 
@@ -53,8 +54,10 @@ This script streamlines the initialization process for the application by first 
 
 Concurrently runs the following commands:
 
-npm run start-react
-npm run start-server
+```
+   npm run start-react
+   npm run start-server
+```
 
 ### `npm start-react`
 

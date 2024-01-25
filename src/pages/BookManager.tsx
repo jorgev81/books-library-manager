@@ -42,7 +42,6 @@ const BookManager = () => {
         }
     };
 
-
     const handleDeleteBook = async () => {
         if (selectedRow?.id) {
             try {
@@ -56,7 +55,6 @@ const BookManager = () => {
             }
         }
     };
-
 
     const handleAddBook = async (newBook: IBook) => {
         try {

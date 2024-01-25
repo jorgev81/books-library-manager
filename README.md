@@ -1,18 +1,71 @@
-# Getting Started with Create React App
+# Getting Started with Book Library Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project provides a user-friendly Personal Library Manager to manage a collections of books. Users can add new books, update details and delete it. The widget is designed based on Material UI.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Typescript.
+
+## Instructions for setting up 
+
+Follow these steps to set up and run the application:
+
+- Create a Root Folder:
+mkdir your-app-name
+cd your-app-name
+
+- Inside root folder, clone the Frontend Repository.
+
+- Inside root folder, create the Server folder and copy the Node.js mock server.
+
+- Install Dependencies and Start the Application:
+cd FRONTEND_FOLDER
+npm run start-app
+
+## Requirements
+
+### Widget Functionality:
+- Allows users to add a new book.
+- Display the books in a table. 
+- Allow users to delete a book. 
+- Allow users to update a book.
+- Allows users to use mui datatable filters and pagination features.
+
+### Dependencies
+
+- [React](https://react.dev/): A declarative, efficient, and flexible JavaScript library for building user interfaces.
+
+- [Material UI](https://mui.com/material-ui/): Material UI is an open-source React component library that implements Google's Material Design. It's comprehensive and can be used in production out of the box.
+
+- [Axios](https://axios-http.com/): Axios is a simple promise based HTTP client for the browser and Node.js. Axios provides a simple to use library in a small package with a very extensible interface.
+
+- [SWR](https://swr.vercel.app/):  SWR is a React Hooks library for data fetching.
+
+- [Formik](https://formik.org/): a small group of React components and hooks for building forms in React.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start-app`
 
-Runs the app in the development mode.\
+This script streamlines the initialization process for the application by first installing dependencies for both the React frontend and the Node.js server, and then concurrently starting both components.
+
+Concurrently runs the following commands:
+
+npm run start-react
+npm run start-server
+
+### `npm start-react`
+
+Runs the frontend app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `npm start-server`
+
+Runs the Node.js server app in the development mode.\
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 ### `npm test`
 
@@ -39,8 +92,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+ Feel free to contribute to the development of this widget. Submit issues or pull requests to enhance its functionality or address any bugs.
